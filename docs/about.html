@@ -11,11 +11,11 @@
       color: #c9d1d9;
       font-family: 'Courier New', Courier, monospace;
       margin: 0;
-      padding: 2rem;
+      padding: 0;
     }
     nav {
       background: #0d1117;
-      padding: 1rem 2rem;
+      padding: 1rem;
       text-align: center;
     }
     nav a {
@@ -27,34 +27,53 @@
     nav a:hover {
       text-decoration: underline;
     }
-    h1 {
-      text-align: center;
-      color: #00ffff;
-    }
-    .about {
-      max-width: 800px;
+    .container {
+      max-width: 900px;
       margin: 2rem auto;
-      line-height: 1.6;
-      background-color: #161b22;
       padding: 2rem;
+      background-color: #161b22;
       border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00ffff;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      color: #00ffff;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    p {
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
+
   <nav>
     <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
     <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </nav>
 
-  <h1>About Me</h1>
-  <div class="about">
-    <p>Hi, I'm Codey Travers — a mechanical, mechatronics and robotics engineer with a passion for solving complex problems and building practical systems.</p>
+  <div class="container">
+    <img src="assets/profile.jpg" alt="Codey Travers" class="profile-pic">
+    <h1>About Me</h1>
+    <p>Hi, I'm <strong>Codey Travers</strong> — a mechanical, mechatronics, and robotics engineer with a passion for solving complex problems and building practical systems.</p>
     <p>I’ve worked across design, simulation, control systems, FEA, automation, and product development — blending CAD precision with real-world systems thinking.</p>
     <p>My work spans research-driven gripper design, tendon actuation, servo control, and embedded systems. I enjoy bridging the gap between theory and practice.</p>
     <p>This portfolio showcases highlights of that journey — and I'm always looking to push the frontier further.</p>
   </div>
+
 </body>
 </html>
