@@ -81,24 +81,22 @@
       margin: 5% auto;
       padding: 2rem;
       width: 90%;
-      max-width: 700px;
+      max-width: 720px;
       border-radius: 10px;
       text-align: center;
       color: #fff;
     }
     .modal-content video {
       width: 100%;
-      border-radius: 8px;
-      margin-top: 1rem;
+      max-height: 400px;
+      height: auto;
+      z-index: 999;
     }
     .close {
       color: #ccc;
       float: right;
       font-size: 1.5rem;
       cursor: pointer;
-    }
-    .close:hover {
-      color: #fff;
     }
   </style>
 </head>
@@ -137,7 +135,9 @@
   <div id="modal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <div id="modal-body"></div>
+      <div id="modal-body">
+        <!-- Content gets injected here -->
+      </div>
     </div>
   </div>
 
@@ -155,22 +155,22 @@
         cli: `
           <h2>Codex Architect CLI</h2>
           <p>A terminal-based CLI for bootstrapping new projects quickly.</p>
-          <video controls loop src="assets/demo-cli.mp4"></video>
+          <video controls src="assets/demo-cli.mp4"></video>
         `,
         biomech: `
           <h2>Biomechanics Study</h2>
-          <p>Stress and motion animation of tendon-driven linkage from Fusion.</p>
-          <video controls loop src="assets/biomechanics-demo.mp4"></video>
+          <p>Stress and motion animation of tendon–driven linkage from Fusion.</p>
+          <video controls src="assets/biomechanics-demo.mp4"></video>
         `,
         slam: `
           <h2>Autonomous Navigation</h2>
-          <p>Demo of SLAM mapping and pathfinding using Python and ROS.</p>
-          <video controls loop src="assets/slam-navigation.mp4"></video>
+          <p>Demo of real-time SLAM mapping and route planning using ROS.</p>
+          <video controls src="assets/slam-navigation.mp4"></video>
         `,
         simtool: `
           <h2>Research Visualisation Tool</h2>
-          <p>Demonstration of simulated 4-bar mechanism output using JS canvas.</p>
-          <video controls loop src="assets/visualisation-tool.mp4"></video>
+          <p>Walkthrough of simulated 4-bar mechanisms built in JS canvas.</p>
+          <video controls src="assets/visualisation-tool.mp4"></video>
         `
       };
 
@@ -178,14 +178,13 @@
     }
 
     function closeModal() {
-      const modal = document.getElementById("modal");
-      const body = document.getElementById("modal-body");
-      modal.style.display = "none";
-      body.innerHTML = "";
+      document.getElementById("modal").style.display = "none";
+      document.getElementById("modal-body").innerHTML = "";
     }
 
     window.onclick = function(event) {
-      if (event.target == document.getElementById("modal")) closeModal();
+      const modal = document.getElementById("modal");
+      if (event.target == modal) closeModal();
     }
   </script>
 </body>
