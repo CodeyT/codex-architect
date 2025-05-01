@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Codex Architect</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Codex Architect</title>
   <link rel="icon" href="assets/codex-favicon.png" type="image/png" />
   <style>
     body {
@@ -16,7 +16,7 @@
 
     nav {
       background-color: #0d0117;
-      padding: 20px 0;
+      padding: 1rem 0;
     }
 
     nav a {
@@ -27,31 +27,78 @@
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #00cccc;
     }
 
-    h1 {
-      color: #00ffff;
+    .hero {
+      margin: 3rem auto 2rem;
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+
+    .hero h1 {
       font-size: 2.5rem;
-      margin-top: 50px;
+      margin-bottom: 0.5rem;
     }
 
-    .carousel-container {
-      width: 90%;
-      overflow: hidden;
-      margin: 60px auto;
+    .hero h2 {
+      font-size: 2rem;
+      margin: 0.5rem 0;
     }
 
-    .carousel-track {
+    .hero h3 {
+      font-size: 1.5rem;
+      color: #00ffff;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      margin: 1rem auto;
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    .highlight {
+      color: #ff69b4;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin-top: 20px;
+      background-color: #00ffff;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #00cccc;
+    }
+
+    .carousel {
       display: flex;
-      animation: scroll 20s linear infinite;
-      gap: 40px;
+      overflow: hidden;
+      justify-content: start;
+      gap: 3rem;
+      animation: scroll 30s linear infinite;
+      margin: 4rem auto;
+      max-width: 100%;
+      padding: 1rem 0;
     }
 
-    .carousel-track img {
-      height: 60px;
+    .carousel img {
+      max-height: 100px;
       object-fit: contain;
-      filter: brightness(1.2);
+      filter: grayscale(10%);
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .carousel img:hover {
+      transform: scale(1.1);
+      filter: none;
     }
 
     @keyframes scroll {
@@ -60,18 +107,14 @@
     }
 
     footer {
-      margin-top: 80px;
+      margin-top: 4rem;
       font-size: 0.9rem;
-      color: #aaaaaa;
+      color: #cccccc;
     }
 
     footer a {
       color: #00ffff;
       text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -84,23 +127,29 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <h1>🎓 Codex Architect Portfolio</h1>
+  <div class="hero">
+    <h1>Hi — welcome to my site!</h1>
+    <h2>I’m <span class="highlight">Codey Travers</span></h2>
+    <h3>The Codex Architect</h3>
+    <p>
+      I design, build, and refine intelligent systems — blending hands-on engineering, robotics, and research with clean design and practical automation. <br />
+      This space is where ideas meet execution.
+    </p>
+    <a href="assets/Codey_Travers_CV.pdf" class="btn" download>Download My CV</a>
+  </div>
 
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <img src="assets/logo-western-sydney.png" alt="Western Sydney University">
-      <img src="assets/logo-uts.png" alt="UTS">
-      <img src="assets/logo-sydney.png" alt="University of Sydney">
-      <img src="assets/logo-uow.png" alt="University of Wollongong">
-      <img src="assets/logo-tafe.png" alt="TAFE NSW">
-
-      <!-- Repeat for smooth looping -->
-      <img src="assets/logo-western-sydney.png" alt="Western Sydney University">
-      <img src="assets/logo-uts.png" alt="UTS">
-      <img src="assets/logo-sydney.png" alt="University of Sydney">
-      <img src="assets/logo-uow.png" alt="University of Wollongong">
-      <img src="assets/logo-tafe.png" alt="TAFE NSW">
-    </div>
+  <div class="carousel">
+    <img src="assets/logo-uts.png" alt="UTS">
+    <img src="assets/logo-sydney.png" alt="University of Sydney">
+    <img src="assets/logo-uow.png" alt="University of Wollongong">
+    <img src="assets/logo-tafe.png" alt="TAFE NSW">
+    <img src="assets/logo-western-sydney.png" alt="Western Sydney University">
+    <!-- Duplicated for seamless infinite scroll -->
+    <img src="assets/logo-uts.png" alt="UTS">
+    <img src="assets/logo-sydney.png" alt="University of Sydney">
+    <img src="assets/logo-uow.png" alt="University of Wollongong">
+    <img src="assets/logo-tafe.png" alt="TAFE NSW">
+    <img src="assets/logo-western-sydney.png" alt="Western Sydney University">
   </div>
 
   <footer>
@@ -109,4 +158,3 @@
 
 </body>
 </html>
-
