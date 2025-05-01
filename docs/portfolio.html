@@ -7,204 +7,186 @@
   <link rel="icon" href="assets/codex-favicon.png" type="image/png" />
   <style>
     body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: 'Courier New', Courier, monospace;
       margin: 0;
-      font-family: 'Courier New', monospace;
-      background-color: #0d1117;
-      color: #00ffff;
+      padding: 0;
     }
-
     nav {
-      background-color: #0d1117;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      border-bottom: 1px solid #00ffff33;
+      background: #0d1117;
+      padding: 1rem 2rem;
+      text-align: center;
     }
-
     nav a {
+      margin: 0 1rem;
       color: #00ffff;
       text-decoration: none;
       font-weight: bold;
     }
-
     nav a:hover {
       text-decoration: underline;
     }
-
     h1 {
       text-align: center;
-      margin-top: 1.5rem;
-      font-size: 2rem;
+      color: #00ffff;
+      padding-top: 1rem;
     }
-
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
+    .portfolio-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
       padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
     }
-
     .card {
       background-color: #161b22;
+      border-radius: 10px;
       padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #00ffff33;
+      width: 300px;
       text-align: center;
+      transition: transform 0.3s ease;
       cursor: pointer;
-      transition: transform 0.2s ease;
     }
-
     .card:hover {
       transform: scale(1.05);
     }
-
     .card img {
       width: 60px;
-      margin-bottom: 1rem;
+      height: 60px;
     }
-
-    .card-title {
-      font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
+    .card h2 {
       color: #00ffff;
     }
-
+    .card p {
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+    }
     .modal {
       display: none;
       position: fixed;
-      z-index: 1000;
+      z-index: 999;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: rgba(0,0,0,0.8);
     }
-
     .modal-content {
       background-color: #161b22;
-      margin: 10% auto;
+      margin: 5% auto;
       padding: 2rem;
-      border: 1px solid #888;
       width: 90%;
-      max-width: 600px;
-      border-radius: 8px;
+      max-width: 700px;
+      border-radius: 10px;
+      text-align: center;
       color: #fff;
     }
-
+    .modal-content video {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
     .close {
       color: #ccc;
       float: right;
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 1.5rem;
       cursor: pointer;
     }
-
     .close:hover {
       color: #fff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #888;
     }
   </style>
 </head>
 <body>
-
   <nav>
     <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
     <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </nav>
 
-  <h1>🛠️ Codex Architect Portfolio</h1>
-
-  <div class="portfolio">
-    <div class="card" onclick="openModal('modal1')">
-      <img src="assets/codex-favicon.png" alt="Project 1" />
-      <div class="card-title">Codex Architect CLI</div>
-      <div>A multi-stack project generator for templated software builds.</div>
-    </div>
-
-    <div class="card" onclick="openModal('modal2')">
-      <img src="assets/codex-favicon.png" alt="Project 2" />
-      <div class="card-title">Biomechanics Study</div>
-      <div>Developed a tendon-actuated robotic finger and analysed joint torque & stress using CAD & FEA.</div>
-    </div>
-
-    <div class="card" onclick="openModal('modal3')">
-      <img src="assets/codex-favicon.png" alt="Project 3" />
-      <div class="card-title">Autonomous Navigation</div>
-      <div>Integrated SLAM and path planning for a robotic vehicle using ROS and Python.</div>
-    </div>
-
-    <div class="card" onclick="openModal('modal4')">
-      <img src="assets/codex-favicon.png" alt="Project 4" />
-      <div class="card-title">Research Visualisation Tool</div>
-      <div>Built a web interface to simulate and visualise mechanical linkages using JavaScript + Canvas.</div>
-    </div>
-  </div>
-
-  <!-- Modal Windows -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal1')">&times;</span>
+  <h1>Codex Architect Portfolio</h1>
+  <div class="portfolio-container">
+    <div class="card" onclick="openModal('cli')">
+      <img src="assets/codex-favicon.png" alt="Codex Architect CLI">
       <h2>Codex Architect CLI</h2>
-      <p>This tool scaffolds new software projects using CLI prompts with templated folders for Node.js, Python, and HTML projects. Great for automation!</p>
+      <p>A multi-stack project generator for templated software builds.</p>
     </div>
-  </div>
-
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal2')">&times;</span>
+    <div class="card" onclick="openModal('biomech')">
+      <img src="assets/codex-favicon.png" alt="Biomechanics">
       <h2>Biomechanics Study</h2>
-      <p>Analysed tendon-driven robotic mechanisms using FEA and simulation. Optimised for stress and torque under load using CAD tools and Fusion 360.</p>
+      <p>Designed and analysed a robotic tendon-actuated finger using FEA + CAD.</p>
     </div>
-  </div>
-
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal3')">&times;</span>
+    <div class="card" onclick="openModal('slam')">
+      <img src="assets/codex-favicon.png" alt="SLAM Navigation">
       <h2>Autonomous Navigation</h2>
-      <p>Built and tested an autonomous robotic system using ROS (Robot Operating System), with navigation, mapping, and path planning modules.</p>
+      <p>Used SLAM and ROS with Python to map and plan robotic movement.</p>
+    </div>
+    <div class="card" onclick="openModal('simtool')">
+      <img src="assets/codex-favicon.png" alt="Visualisation Tool">
+      <h2>Research Visualisation</h2>
+      <p>Web interface for linkage simulations using JavaScript + Canvas.</p>
     </div>
   </div>
 
-  <div id="modal4" class="modal">
+  <div id="modal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('modal4')">&times;</span>
-      <h2>Research Visualisation Tool</h2>
-      <p>Created a dynamic web-based tool to animate and simulate kinematic linkages and mechanical assemblies for engineering demonstration.</p>
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
     </div>
   </div>
 
   <footer>
-    <p>&copy; 2025 Codey Travers | Made with ❤️ by <a href="https://github.com/CodeyT" target="_blank">CodeyT</a></p>
+    &copy; 2025 Codey Travers | Made with ❤️ by <a href="https://github.com/CodeyT" style="color: #00ffff">CodeyT</a>
   </footer>
 
   <script>
-    function openModal(id) {
-      document.getElementById(id).style.display = "block";
+    function openModal(project) {
+      const modal = document.getElementById("modal");
+      const modalBody = document.getElementById("modal-body");
+      modal.style.display = "block";
+
+      const content = {
+        cli: `
+          <h2>Codex Architect CLI</h2>
+          <p>A terminal-based CLI for bootstrapping new projects quickly.</p>
+          <video controls loop src="assets/demo-cli.mp4"></video>
+        `,
+        biomech: `
+          <h2>Biomechanics Study</h2>
+          <p>Stress and motion animation of tendon-driven linkage from Fusion.</p>
+          <video controls loop src="assets/biomechanics-demo.mp4"></video>
+        `,
+        slam: `
+          <h2>Autonomous Navigation</h2>
+          <p>Demo of SLAM mapping and pathfinding using Python and ROS.</p>
+          <video controls loop src="assets/slam-navigation.mp4"></video>
+        `,
+        simtool: `
+          <h2>Research Visualisation Tool</h2>
+          <p>Demonstration of simulated 4-bar mechanism output using JS canvas.</p>
+          <video controls loop src="assets/visualisation-tool.mp4"></video>
+        `
+      };
+
+      modalBody.innerHTML = content[project] || "<p>Content not found.</p>";
     }
 
-    function closeModal(id) {
-      document.getElementById(id).style.display = "none";
+    function closeModal() {
+      const modal = document.getElementById("modal");
+      const body = document.getElementById("modal-body");
+      modal.style.display = "none";
+      body.innerHTML = "";
     }
 
-    // Optional: Close modal on ESC
-    document.addEventListener('keydown', function(e) {
-      if (e.key === "Escape") {
-        document.querySelectorAll('.modal').forEach(modal => modal.style.display = "none");
-      }
-    });
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("modal")) closeModal();
+    }
   </script>
 </body>
 </html>
