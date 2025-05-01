@@ -1,45 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Codex Architect</title>
-
-  <!-- ✅ Favicon (browser tab icon) -->
-  <link rel="icon" type="image/png" href="assets/codex-favicon.png?v=2" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Codex Architect</title>
+  <link rel="icon" href="assets/codex-favicon.png" type="image/png" />
   <style>
     body {
-      background-color: #0d1117;
-      color: #00ffff;
-      font-family: 'Courier New', Courier, monospace;
-      white-space: pre;
-      font-size: 14px;
-      line-height: 1.2;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .corner-logo {
-      position: absolute;
-      top: 1.2rem;
-      left: 1.2rem;
-      width: 64px;
-      height: auto;
-      z-index: 10;
-    }
-
-    .ascii {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background-color: #0d0117;
+      color: #ffffff;
       text-align: center;
+    }
+
+    nav {
+      background-color: #0d0117;
+      padding: 20px 0;
+    }
+
+    nav a {
+      color: #00ffff;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      color: #00ffff;
+      font-size: 2.5rem;
+      margin-top: 50px;
+    }
+
+    .carousel-container {
+      width: 90%;
+      overflow: hidden;
+      margin: 60px auto;
+    }
+
+    .carousel-track {
+      display: flex;
+      animation: scroll 20s linear infinite;
+      gap: 40px;
+    }
+
+    .carousel-track img {
+      height: 60px;
+      object-fit: contain;
+      filter: brightness(1.2);
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     footer {
-      margin-top: auto;
-      text-align: center;
-      font-size: 0.9em;
-      color: #888;
+      margin-top: 80px;
+      font-size: 0.9rem;
+      color: #aaaaaa;
     }
 
     footer a {
@@ -51,19 +74,39 @@
       text-decoration: underline;
     }
   </style>
-
-  <script defer src="assets/animate.js"></script>
 </head>
 <body>
-  <!-- ✅ Floating trademark logo -->
-  <img src="assets/codex-favicon.png" alt="Codex Logo" class="corner-logo" />
 
-  <!-- ✅ ASCII animation container -->
-  <div class="ascii" id="ascii-banner"></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-  <!-- ✅ Footer -->
+  <h1>🎓 Codex Architect Portfolio</h1>
+
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <img src="assets/logo-western-sydney.png" alt="Western Sydney University">
+      <img src="assets/logo-uts.png" alt="UTS">
+      <img src="assets/logo-sydney.png" alt="University of Sydney">
+      <img src="assets/logo-uow.png" alt="University of Wollongong">
+      <img src="assets/logo-tafe.png" alt="TAFE NSW">
+
+      <!-- Repeat for smooth looping -->
+      <img src="assets/logo-western-sydney.png" alt="Western Sydney University">
+      <img src="assets/logo-uts.png" alt="UTS">
+      <img src="assets/logo-sydney.png" alt="University of Sydney">
+      <img src="assets/logo-uow.png" alt="University of Wollongong">
+      <img src="assets/logo-tafe.png" alt="TAFE NSW">
+    </div>
+  </div>
+
   <footer>
-    <p>Made with ❤️ by <a href="https://github.com/CodeyT" target="_blank">CodeyT</a></p>
+    © 2025 Codey Travers | Made with ❤️ by <a href="https://github.com/CodeyT" target="_blank">CodeyT</a>
   </footer>
+
 </body>
 </html>
+
